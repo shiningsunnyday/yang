@@ -47,10 +47,15 @@ def has_yang(image, model, xml_path):
     faces = normalize_faces(image, faces_coord)
 
     yang = False
+    yang_f = None
+    yang_score = 0
     for f in faces:
-        if label_yang(f, model):
+        l = label_yang(f, model)
+        if l > yang_score:
             yang = True
-    return yang
+            yang_score = l
+            yang_f = f
+    return yang, yang_score, yang_f
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

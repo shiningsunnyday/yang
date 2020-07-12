@@ -1,3 +1,7 @@
+{% load static %}
+{% for img in imgs %}
+<img src="{% static img %}">
+{% endfor %}
 <form action="" enctype="multipart/form-data" method="post">
     {% csrf_token %}
     {{ form }}
