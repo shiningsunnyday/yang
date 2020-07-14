@@ -1,4 +1,5 @@
 {% load static %}
+<A HREF = "https://www.gofundme.com/f/andrew-yang-no-andrew-yang?utm_source=customer&utm_medium=copy_link&utm_campaign=p_cf+share-flow-1">DONATE HERE (links to GoFundMe)!</A>
 {% for img in imgs %}
 <img src="{% static img %}">
 {% endfor %}
@@ -6,4 +7,5 @@
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
+    <p>Make sure pic is jpg</p>
 </form>
