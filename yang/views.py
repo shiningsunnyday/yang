@@ -47,7 +47,9 @@ def yang_view(request):
             yang, yang_score, yang_f = handle_file(orig_img)
             if yang:
                 img = Image.fromarray(yang_f, 'RGB')
-                imgs = os.listdir('static/user')[1:]
+                imgs = os.listdir('static/user')
+                if '.DS_Store' in imgs:
+                    imgs.remove('.DS_Store')
                 imgs = sorted(imgs, key=lambda x: int(x[:x.find('.')]))
                 full, face = go_save(orig_img, img, imgs)
             if request.POST.get('input') != 'Andrew Yang':
