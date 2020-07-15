@@ -4,9 +4,12 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>Congrats</title>
-    <img src="{% static full %}">
-    <img src="{% static face %}">
-    <p>Great</p>
+    <img src="{% static user_full %}">
+    <img src="{% static user_face %}">
+    <p>WELCOME TO THE CLUB! Check out all the other user submitted pictures!</p>
+    {% for img in imgs %}
+    <img src="{% static img %}">
+    {% endfor %}
 </head>
 <body>
 
