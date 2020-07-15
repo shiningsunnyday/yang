@@ -22,11 +22,9 @@ def handle_file(img):
     return has_yang(opencv_img, model, xml_path)
 
 def go_save(orig_img, img, imgs):
-    cur_imgs = os.listdir('static/user')
-    cur_imgs = cur_imgs[::-1]
-    cur_imgs.remove('.DS_Store')
-    if not cur_imgs:
-        cur_imgs = []
+    cur_imgs = os.listdir('static/user')[::-1]
+    if '.DS_Store' in cur_imgs:
+        cur_imgs.remove('.DS_Store')
     if len(cur_imgs) >= 50:
         m, n = imgs[-2], imgs[-1]
         os.remove('static/user/%s' % m); os.remove('static/user/%s' % n)
