@@ -30,11 +30,7 @@ ALLOWED_HOSTS = ['*']
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_STORAGE_BUCKET_NAME = 'yang-face'
-AWS_ACCESS_KEY_ID = 'AKIAIJVW3D73N6S3C5WA'
-AWS_SECRET_ACCESS_KEY = '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'
+
 
 # Application definition
 
